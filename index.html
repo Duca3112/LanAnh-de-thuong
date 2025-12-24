@@ -1,0 +1,196 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Thiệp Giáng Sinh 🎄</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Font chữ viết tay -->
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: url("background.jpg") center/cover no-repeat;
+      font-family: 'Caveat', cursive;
+      overflow: hidden;
+    }
+
+    .overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(255, 214, 214, 0.75);
+      z-index: 0;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      width: 92%;
+      max-width: 420px;
+      perspective: 1200px;
+    }
+
+    /* ===== MÀN HÌNH 1 ===== */
+    .screen1 {
+      background: white;
+      border-radius: 18px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+      animation: fadeIn 1s ease;
+    }
+
+    .screen1 h1 {
+      color: #c0392b;
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
+
+    .gift {
+      font-size: 70px;
+      animation: bounce 1.6s infinite;
+    }
+
+    button {
+      margin-top: 16px;
+      padding: 12px 26px;
+      border: none;
+      border-radius: 25px;
+      background: #c0392b;
+      color: white;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    /* ===== THIỆP ===== */
+    .card {
+      display: none;
+      background: #fffaf0;
+      border-radius: 18px;
+      padding: 30px 24px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+      transform: rotateY(90deg);
+    }
+
+    .card.show {
+      display: block;
+      animation: flip 1.2s ease forwards;
+    }
+
+    .title {
+      text-align: center;
+      font-size: 30px;
+      color: #c0392b;
+      margin-bottom: 14px;
+    }
+
+    /* VỞ KẺ DÒNG */
+    .note {
+      background: repeating-linear-gradient(
+        to bottom,
+        transparent,
+        transparent 30px,
+        #f0caca 31px
+      );
+      padding: 8px 6px;
+      font-size: 22px;
+      line-height: 31px;
+      color: #333;
+      font-style: italic;
+    }
+
+    /* DÒNG VIẾT CHỮ */
+    .line {
+      white-space: nowrap;
+      overflow: hidden;
+      width: 0;
+      animation: typing 2.2s steps(32, end) forwards;
+    }
+
+    /* delay cho từng dòng */
+    .d1 { animation-delay: 1.4s; }
+    .d2 { animation-delay: 3.8s; }
+    .d3 { animation-delay: 6.2s; }
+    .d4 { animation-delay: 8.6s; }
+    .d5 { animation-delay: 11s; }
+    .d6 { animation-delay: 13.4s; }
+    .d7 { animation-delay: 15.8s; }
+    .d8 { animation-delay: 18.2s; }
+    .d9 { animation-delay: 20.6s; }
+    .d10 { animation-delay: 23s; }
+
+    /* ANIMATION */
+    @keyframes flip {
+      to { transform: rotateY(0deg); }
+    }
+
+    @keyframes typing {
+      to { width: 100%; }
+    }
+
+    @keyframes bounce {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @media (max-width: 480px) {
+      .title { font-size: 26px; }
+      .note { font-size: 20px; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="overlay"></div>
+
+  <div class="container">
+
+    <!-- MÀN HÌNH 1 -->
+    <div id="screen1" class="screen1">
+      <h1>🎄 Merry Christmas 🎄</h1>
+      <div class="gift">🎁</div>
+      <p>Anh có món quà nhỏ cho em</p>
+      <button onclick="openCard()">Bấm vào đây nè 🎁</button>
+    </div>
+
+    <!-- THIỆP -->
+    <div id="card" class="card">
+      <div class="title">💌 Gửi em bé iu Lan Anhh 💌</div>
+
+      <div class="note">
+        <!-- 3 DÒNG CÓ SẴN -->
+        <div class="line d1">Merry christmas  ❤️</div>
+        <div class="line d2">Anh chúc em có một mùa giáng sinh vuii vẻ 🎄</div>
+        <div class="line d3">hạnh phúc ấm áp bên gia đình và bên anh ✨</div>
+
+        <!-- 7 DÒNG ĐỂ BẠN VIẾT -->
+        <div class="line d4">Anh chúc em gặp nhiều may mắn</div>
+        <div class="line d5">và chúc em đạt được những điều em muốn</div>
+        <div class="line d6">Hy vọng chúng ta sẽ cùng nhau đi thật xa </div>
+        <div class="line d7">Không chỉ mùa Noel này</div>
+        <div class="line d8">Mà là rất nhiều mùa Noel sau nữa</div>
+        <div class="line d9">❤️ Anh iuu em rất nhiều ❤️</div>
+        <div class="line d10">❤️ I love youuuuu ❤️</div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function openCard() {
+      document.getElementById("screen1").style.display = "none";
+      document.getElementById("card").classList.add("show");
+    }
+  </script>
+</body>
+</html>
